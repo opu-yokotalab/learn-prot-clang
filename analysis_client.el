@@ -1,15 +1,15 @@
 (defun analysis-client ()
   "get xml from server"
   (interactive)
-  (let ((buf (get-buffer-create "conection"))
+  (let ((buf (get-buffer-create "*connection*"))
 	(proc nil))
     (setq proc (open-network-stream
-		"connection"
+		"*connection*"
 		buf
 		"localhost"
 		7120))
     (set-process-coding-system proc 'iso-2022-jp 'binary)
-;    (display-buffer buf)
+    (display-buffer buf)
     (set-buffer "*result*")
     (process-send-string proc (format (concat "mode_compiler")))
     (process-send-string proc (format (concat "\n")))
