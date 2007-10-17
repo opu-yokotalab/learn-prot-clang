@@ -39,8 +39,9 @@ while true
         msgGetBuf = msgGetBuf + l
       end
     end
-  # ภฺรว
-  s.close
+    # ภฺรว
+    puts "close."
+    s.close
   end
 end
 

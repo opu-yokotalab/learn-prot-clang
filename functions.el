@@ -38,7 +38,7 @@
     (sleep-for 0.3)
     (delete-process proc)
     (set-buffer-modified-p nil)
-    (kill-buffer "*connection*")
+;    (kill-buffer "*connection*")
     )
   )
 
