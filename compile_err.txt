@@ -1,0 +1,13 @@
+sample.c:6: error: syntax error before "return"
+sample.c: In function `sum':
+sample.c:7: error: `c' undeclared (first use in this function)
+sample.c:7: error: (Each undeclared identifier is reported only once
+sample.c:7: error: for each function it appears in.)
+sample.c: In function `main':
+sample.c:10: error: syntax error before ')' token
+sample.c: At top level:
+sample.c:15: error: syntax error before "for"
+sample.c:15: error: `i' undeclared (first use in this function)
+/tmp/ccTtl05n.o(.text+0x78): In function `main':
+: undefined reference to `print'
+collect2: ld returned 1 exit status

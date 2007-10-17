@@ -1,0 +1,9 @@
+Using host libthread_db library "/lib/libthread_db.so.1".
+
+Program received signal SIGFPE, Arithmetic exception.
+0x08048369 in main () at sample3.c:13
+/home/tnishi/e-learning/compile/sample3.c:13:140:beg:0x8048369
+
+Program received signal SIGFPE, Arithmetic exception.
+0x08048369 in main () at sample3.c:13
+/home/tnishi/e-learning/compile/sample3.c:13:140:beg:0x8048369
