@@ -45,6 +45,7 @@ class Test_cgi
     xslt = XML::XSLT.new()
     xslt.xml = elem
     x = REXML::Document.new File.open( "./test.xsl" )
+puts x
     xslt.xsl = x
     out = xslt.serve() # Stringオブジェクト
     

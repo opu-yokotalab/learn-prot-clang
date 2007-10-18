@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet
-	xmlns:xsl="http://www.w3c.org/1999/XSL/Transform"
+	exclude-result-prefixes="#default"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns="http://www.w3.org/1999/xhtml"
 	version="1.0"
 >
-	<xsl:output method="xml" encoding="utf-8" />
 
 <xsl:template match="compiler_messages">
 	      <table summary="Error Message (Compiler)"> 
@@ -25,23 +26,13 @@
 	      <tr>
 	      <td><xsl:value-of select="@line" /></td>
 	      <td><xsl:value-of select="@status" /></td>
-	      <td><xsl:apply-templates /></td>
-	      <td><xsl:apply-templates /></td>
-	      <td><xsl:apply-templates /></td>
+	      <td><xsl:value-of select="./source/text()" /></td>
+	      <td><xsl:value-of select="./function/text()" /></td>
+	      <td><xsl:value-of select="./description/text()" /></td>
 	      </tr>
 </xsl:template>
 
-<xsl:template match="source">
-	      <xsl:value-of select="text()" />
+<xsl:template match="text()">
 </xsl:template>
-
-<xsl:template match="function">
-	      <xsl:value-of select="text()" />
-</xsl:template>
-
-<xsl:template match="description">
-	      <xsl:value-of select="text()" />
-</xsl:template>
-
 
 </xsl:stylesheet>

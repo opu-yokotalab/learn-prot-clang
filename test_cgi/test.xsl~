@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet
+	exclude-result-prefixes="#default"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns="http://www.w3.org/1999/xhtml"
+	version="1.0"
+>
+
+<xsl:template match="compiler_messages">
+	      <table summary="Error Message (Compiler)"> 
+	      <caption>Error List</caption>
+	      <tbody>
+	      <tr>
+	      <th>Line</th>
+	      <th>Status</th>
+	      <th>Source</th>
+	      <th>Function</th>
+	      <th>Description</th>
+	      </tr>
+	      <xsl:apply-templates />
+	      </tbody>
+	      </table>
+</xsl:template>
+
+<xsl:template match="message">
+	      <tr>
+	      <td><xsl:value-of select="@line" /></td>
+	      <td><xsl:value-of select="@status" /></td>
+	      <td><xsl:apply-templates /></td>
+	      <td><xsl:apply-templates /></td>
+	      <td><xsl:apply-templates /></td>
+	      </tr>
+</xsl:template>
+
+<xsl:template match="source">
+	      <xsl:value-of select="text()" />
+</xsl:template>
+
+<xsl:template match="function">
+	      <xsl:value-of select="text()" />
+</xsl:template>
+
+<xsl:template match="description">
+	      <xsl:value-of select="text()" />
+</xsl:template>
+
+
+</xsl:stylesheet>
