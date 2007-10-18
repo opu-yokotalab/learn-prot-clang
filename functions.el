@@ -11,7 +11,7 @@
 		 nil
 		 "/home/t_nishi/e-learning/compile/compile.sh"
 		 "sample"
-		 "/home/t_nishi/e-learning/compile/sample.c"
+		 (buffer-file-name)
 		 ))
 ;     (set-process-coding-system proc 'euc-jp-unix 'euc-jp-unix)
 ;     (display-buffer "*result*"))

@@ -26,7 +26,7 @@ while true
       if l == "EOF" then
         puts "get EOF"
         puts ""
-        puts CGI.escape(msgGetBuf)
+        puts msgGetBuf
         puts ""
 
         Net::HTTP.version_1_2   # おまじない
