@@ -15,7 +15,8 @@
 		 ))
 ;     (set-process-coding-system proc 'euc-jp-unix 'euc-jp-unix)
 ;     (display-buffer "*result*"))
-   (analysis-client))
+   (analysis-client)
+   (http-client))
 )
 
 (defun http-client ()
@@ -34,11 +35,11 @@
     (process-send-string proc (format (buffer-string)))
     (process-send-string proc (format (concat "\n\n")))
     (process-send-string proc (format (concat "EOF")))
-;    (process-send-eof proc)
+    (process-send-eof proc)
     (sleep-for 0.3)
     (delete-process proc)
     (set-buffer-modified-p nil)
-;    (kill-buffer "*connection*")
+    (kill-buffer "*connection*")
     )
   )
 
