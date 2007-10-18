@@ -397,7 +397,7 @@ while true
       break if /^q/i =~ l
 
       # デバッグ用
-      #puts "l: " + l
+#      puts "l: " + l
 
       # 処理モードの切替え
       if l.chomp == "mode_compiler" then
@@ -431,6 +431,7 @@ while true
     end
     # 切断
     s.close
+    puts "close."
   end
 end
   

@@ -4,7 +4,7 @@
   (let ((buf (get-buffer-create "*connection*"))
 	(proc nil))
     (setq proc (open-network-stream
-		"*connection*"
+		"connection"
 		buf
 		"localhost"
 		7120))
@@ -25,7 +25,6 @@
 ;    (setq delete-exited-processes 0)
     (delete-process proc)
     (set-buffer-modified-p nil)
-; *result*バッファを一度消去
     (kill-buffer "*result*")
     )
   )

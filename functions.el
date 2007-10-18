@@ -24,7 +24,7 @@
   (let ((buf (get-buffer-create "*client*"))
 	(proc nil))
     (setq proc (open-network-stream
-		"*client*"
+		"client"
 		buf
 		"localhost"
 		7300))
@@ -32,9 +32,9 @@
 ;    (display-buffer buf)
     (set-buffer "*connection*")
     (process-send-string proc (format (buffer-string)))
-    (process-send-string proc (format (concat "\n")))
+    (process-send-string proc (format (concat "\n\n")))
     (process-send-string proc (format (concat "EOF")))
-    (process-send-eof proc)
+;    (process-send-eof proc)
     (sleep-for 0.3)
     (delete-process proc)
     (set-buffer-modified-p nil)

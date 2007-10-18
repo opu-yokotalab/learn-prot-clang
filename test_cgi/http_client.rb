@@ -4,6 +4,9 @@ require "kconv"
 
 port = 7300
 
+# 受信用バッファ
+msgGetBuf = String.new
+
 # 指定したポートで待ち受け開始
 gs = TCPServer.open(port)
 while true
@@ -16,7 +19,7 @@ while true
       break if /^q/i =~ l
 
       # デバッグ用
-      puts "l: " + l
+#      puts "l: " + l
 
       # メッセージを全て受け取ってから処理開始
       if l == "EOF" then
@@ -26,13 +29,14 @@ while true
         puts ""
 
         Net::HTTP.version_1_2   # おまじない
-        Net::HTTP.start(ARGV[0], 80) {|http|
-          response = http.post(ARGV[1], 
-                               msgGetBuf,
+        Net::HTTP.start("localhost", 80) {|http|
+          response = http.post("/~t_nishi/cgi-bin/prot_clang/test_cgi.cgi", 
+                               "msg=" + msgGetBuf,
                                {"Content-Type" => "application/x-www-form-urlencoded"}
                                )
+          puts Kconv.kconv(response.body, Kconv::EUC)
         }
-
+        
         msgGetBuf = "" # メッセージの初期化
       else
         # バッファにメッセージの断片を蓄積
