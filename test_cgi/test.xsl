@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet
 	xmlns:xsl="http://www.w3c.org/1999/XSL/Transform"
 	version="1.0"
 >
-	<xsl:output method="xml" encoding="utf8" />
+	<xsl:output method="xml" encoding="utf-8" />
 
 <xsl:template match="compiler_messages">
 	      <table summary="Error Message (Compiler)"> 
