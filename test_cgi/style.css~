@@ -1,0 +1,21 @@
+table {
+        font-size: 80%;
+        color: #666666;
+        width: 520px;
+        margin-bottom: 30px;
+        border: 1px solid #CCCCCC;
+        border-collapse: separate;
+        border-spacing: 1px;
+}
+th {
+        padding: 5px;
+        border-right: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        background-color: #E1E2E6;
+}
+td {
+        padding: 5px;
+        border-right: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        background-color: #EFF2F3;
+}
