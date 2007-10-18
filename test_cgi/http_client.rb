@@ -1,6 +1,7 @@
 #!/bin/env ruby
 require 'net/http'
-require "kconv"
+require 'kconv'
+require 'cgi'
 
 port = 7300
 
@@ -25,13 +26,13 @@ while true
       if l == "EOF" then
         puts "get EOF"
         puts ""
-        puts msgGetBuf
+        puts CGI.escape(msgGetBuf)
         puts ""
 
         Net::HTTP.version_1_2   # おまじない
         Net::HTTP.start("localhost", 80) {|http|
           response = http.post("/~t_nishi/cgi-bin/prot_clang/test_cgi.cgi", 
-                               "msg=" + msgGetBuf,
+                               "mode=import&msg=" + CGI.escape(msgGetBuf),
                                {"Content-Type" => "application/x-www-form-urlencoded"}
                                )
           puts Kconv.kconv(response.body, Kconv::EUC)
