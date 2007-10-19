@@ -74,7 +74,7 @@ end
 t_cgi = Test_cgi.new
 
 print "Content-type: text/html\n\n"
-print "<html><head><title>Error List</title><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"></head><body>"
+#print "<html><head><title>Error List</title><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"></head><body>"
 
 
 # CGIの動作モードにより処理を分岐
@@ -88,4 +88,4 @@ elsif t_cgi.get_mode == "new" then
   puts "<p>Reset.</p>"
 end
 
-print "</body></html>"
+#print "</body></html>"
