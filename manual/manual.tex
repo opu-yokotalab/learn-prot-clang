@@ -1,0 +1,165 @@
+\documentclass[a4j,10pt]{jarticle}
+\usepackage[dvips]{graphicx}
+
+% 左側の余白
+%  \setlength{\oddsidemargin}{-5mm}
+% 本文テキスト全体の幅
+%  \setlength{\textwidth}{170mm}
+% 上側の余白
+%  \setlength{\topmargin}{-15mm}
+% ヘッダの高さ
+%  \setlength{\headheight}{-20mm}
+% ヘッダと本文テキストとの間の余白
+%  \setlength{\headsep}{25mm}
+% 本文テキスト全体の高さ
+%  \setlength{\textheight}{260mm}
+
+
+\title{C言語演習支援システム プロトタイプ\\簡易マニュアル Ver 0.1}
+\date{\today}
+\author{知能メディア工学研究室\\M2 西 輝之}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+このマニュアルは開発段階で書いた簡易的なもので所謂叩き台です。
+各ソースコード中の関数など細かい仕様については書いていません。
+
+バージョン管理を行った上での改良は自由ですが、変更を加えた場合はマニュアルに適宜反映させる
+、バージョン管理でログを残すなどして下さい。
+
+\section{プロトタイプの概要}
+Emacs上でC言語のソースコードをコンパイルや実行を行い、出力されたエラーメッセージをXMLに変換。
+その後指定されたCGIへと送信します。
+テスト用CGIは受け取ったXMLをXHTMLに変換し、テーブル形式で提示します。
+
+\section{ファイル構成}
+\subsection{prot\_clang ディレクトリ}
+プロトタイプシステムのメイン
+\begin{description}
+\item[analysis\_client.el] エラーメッセージを解析モジュールへ送信(elisp)
+\item[analysis\_serv.rb] コンパイラ、デバッガ共用のエラーメッセージの解析モジュール(ruby)
+\item[compile.sh] コンパイルを行うシェルスクリプト
+\item[compile\_err.txt] コンパイルエラーのサンプル
+\item[functions.el] コンパイル用シェルスクリプト、http通信モジュールの実行(elisp)
+\item[http\_bridge.rb] http通信モジュール(ruby)
+\item[readme.txt] 説明書みたいな物
+\item[run\_err.txt] 実行エラーのサンプル
+\end{description}
+
+\subsection{sample\_src ディレクトリ}
+C言語サンプルソース群
+\begin{description}
+\item[*.c] サンプルソース群
+\end{description}
+
+\subsection{test\_cgi}
+テスト用CGI
+\begin{description}
+\item[functions.js] Ajaxもどき用JavaScript
+\item[index.html] 表示用html
+\item[result.txt] エラーメッセージ格納用
+\item[style.css] スタイルシート
+\item[test.xsl] xmlからxhtmlに変換するXSLTスタイルシート
+\item[test\_cgi.cgi] エラーメッセージの保存、xhtmlの変換を行うCGI
+\end{description}
+
+\subsection{manual}
+使い方や仕様が記述されたマニュアル（本ファイルを含む）
+\begin{verbatim}
+*.tex
+*.pdf
+*.dvi
+など
+\end{verbatim}
+
+\section{実行方法}
+\begin{enumerate}
+\item エラーメッセージ解析モジュールと、http通信モジュールを起動します。
+コンソール一つにつきモジュール1つしか起動出来ないので2つのコンソールを用意して下さい。
+(emacs shell上で起動しても構いません)
+\begin{verbatim}
+./analysis_serv.rb
+./http_client.rb
+\end{verbatim}
+
+\item emacsで拡張用elisp関数を評価します。emacsで、
+\begin{itemize}
+\item analysis\_client.el
+\item functions.el
+\end{itemize}
+
+の2つのelispファイルを読み込み、1つの関数が定義されている括弧の外でC-x C-eで関数を評価できます。
+
+\begin{verbatim}
+例）
+(defun analysis-client ()
+
+…中略…
+
+)□←ここでC-x C-e
+\end{verbatim}
+詳しくはelispの書籍やWebサイトを参考のこと。
+
+\item 対象とするC言語のソースファイルを読み込み、拡張したelispの関数を用いてコンパイルを行います。
+この時、対象とするファイルを開いているバッファに切り替えた（カレントバッファにした）状態で
+コンパイルを行って下さい。
+\begin{verbatim}
+例）ファイルを開いたemacs上で
+M-x compile-files
+\end{verbatim}
+この関数を実行することで、コンパイル、エラーメッセージの解析、テスト用CGIへの送信が完了します。
+各項目が正しく実行されたか確認する場合には、モジュールを実行させているコンソールに出力されたログ
+を確認して下さい。
+\end{enumerate}
+
+\section{主な仕様}
+\subsection{解析モジュール (analysis\_serv.rb)}
+このモジュールはソケット通信によるプロセス間通信を用いて実現されています。
+通信を行う際は、ポート7120番に接続すること。不都合がある場合はポート番号を変更するとよいでしょう。
+
+受け取ったメッセージがコンパイラから物か、デバッガからの物かを判別するために簡易的なプロトコル
+を用いています。
+\begin{itemize}
+\item 動作モードの送信
+\item メッセージの送信
+\item モジュールが非同期で動作するため、メッセージの送信が完了した事を通知
+\end{itemize}
+
+まず初めに、どのモードで動作させるかをモジュールへと送信します。
+\begin{description}
+\item[コンパイラーのメッセージの場合] mode\_compiler 
+\item[デバッガーのメッセージの場合] mode\_debugger
+\end{description}
+
+次に改行を送信した後に実際のエラーメッセージを送信します。
+送信が完了したら改行に続き"EOF"の3文字を送信する。これがメッセージの送信が完了した事の合図となります。
+
+今回はプロトタイプのためプロトコルを簡易化しましたが、厳密な動作にはモジュールがその動作を正しく完了したか
+などを通知する仕組みが必要となると思われます。
+
+
+\subsection{http通信モジュール(http\_client.rb)}
+このモジュールはソケット通信によるプロセス間通信を用いて実現されています。
+通信を行う際は、ポート7300番に接続すること。不都合がある場合はポート番号を変更するとよいでしょう。
+
+このモジュールも非同期で動作するため、簡易的なプロトコルを用いています。
+解析したメッセージ（xml）の送信が完了したら、解析モジュール (analysis\_serv.rb)同様改行に続き"EOF"
+の3文字を送信します。
+
+このモジュールでも、モジュールの状態を通知するようなプロトコルが必要になると思われます。
+
+\section{全体の流れ}
+ファイル単位での、全体的な流れを図\ref{fig:file_relation}に示します。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[height=10cm]{images/figure.eps}
+		\caption{各ファイル間の関係}
+		\label{fig:file_relation}
+	\end{center}
+\end{figure}
+
+
+
+\end{document}
