@@ -1,11 +1,19 @@
-This is pTeX, Version 3.141592-p3.1.10 (euc) (Web2C 7.5.4) (format=platex-euc 2007.8.2)  30 OCT 2007 17:40
+This is pTeXk, Version 3.141592-p3.1.9 (sjis) (Web2C 7.5.5) (format=platex 2006.1.6)  30 OCT 2007 18:13
+ Source specials enabled.
 **manual.tex
 (./manual.tex
 pLaTeX2e <2006/01/04>+0 (based on LaTeX2e <2003/12/01> patch level 0)
-(/usr/share/texmf/ptex/platex/base/jarticle.cls
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, ukenglish, ba
+sque, bulgarian, coptic, welsh, czech, slovak, german, ngerman, danish, spanish
+, catalan, estonian, finnish, french, irish, polygreek, monogreek, ancientgreek
+, croatian, hungarian, interlingua, ibycus, bahasa, icelandic, italian, latin, 
+mongolian, dutch, norsk, polish, portuguese, pinyin, romanian, russian, samin, 
+slovene, usorbian, serbian, swedish, turkish, ukrainian, dumylang, nohyphenatio
+n, loaded.
+(d:/usr/local/share/texmf/ptex/platex/base/jarticle.cls
 Document Class: jarticle 2002/04/09 v1.4 Standard pLaTeX class
 \c@@paper=\count81
-(/usr/share/texmf/ptex/platex/base/jsize10.clo
+(d:/usr/local/share/texmf/ptex/platex/base/jsize10.clo
 File: jsize10.clo 2002/04/09 v1.4 Standard pLaTeX file (size option)
 )
 \c@part=\count82
@@ -28,95 +36,50 @@ LaTeX Info: Redefining \mathbf on input line 600.
 \bibindent=\dimen120
 \heisei=\count90
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+(d:/usr/local/share/texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+(d:/usr/local/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/share/texmf/tex/latex/graphics/dvipdfmx-contrib-latex/graphics.sty
+(d:/usr/local/share/texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+(d:/usr/local/share/texmf/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.cfg
-File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
-)
+(d:/usr/local/share/texmf/tex/latex/config/graphics.cfg)
 Package graphics Info: Driver file: dvips.def on input line 81.
 
-(/usr/share/texmf-dist/tex/latex/graphics/dvips.def
+(d:/usr/local/share/texmf/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
-) (./manual.aux
-! Text line contains an invalid character.
-l.3 ...n}{\numberline {2}^^83v^^83^^8d^^83g^^83^^^
-                                                  83C^^83v^^82Ì^^8aT^^97v}{2}}
-? q
-OK, entering \batchmode...
-)
-\openout1 = `manual.aux'.
+) (./manual.aux)
+Runaway argument?
+{\contentsline {subsection}{\numberline {3.1}prot\_clang ¥Ç¥£¥ì¥¯¥È¥ê}\ETC.
+! File ended while scanning use of \@writefile.
+<inserted text> 
+                \par 
+l.22 \begin{document}
+                     
+? 
+! Emergency stop.
+<inserted text> 
+                \par 
+l.22 \begin{document}
+                     
+End of file on the terminal!
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 38.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 38.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 41.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 41.
- [1
-
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
- [2] [3]
-File: images/figure.eps Graphic file (type eps)
- <images/figure.eps> [4] (./manual.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 623 strings out of 94689
- 7268 string characters out of 1174876
- 60142 words of memory out of 1000000
- 3947 multiletter control sequences out of 10000+50000
- 13871 words of font info for 54 fonts, out of 500000 for 2000
- 566 hyphenation exceptions out of 1000
- 25i,6n,21p,628b,506s stack positions out of 1500i,500n,5000p,200000b,5000s
-
-Output written on manual.dvi (4 pages, 9684 bytes).
+ 547 strings out of 94500
+ 6304 string characters out of 1175100
+ 57528 words of memory out of 1500000
+ 3934 multiletter control sequences out of 10000+50000
+ 7511 words of font info for 31 fonts, out of 600000 for 2000
+ 679 hyphenation exceptions out of 8191
+ 25i,0n,21p,183b,40s stack positions out of 3000i,500n,5000p,200000b,5000s
+No pages of output.
