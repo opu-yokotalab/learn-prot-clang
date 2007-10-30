@@ -9,7 +9,7 @@
 		 nil
 		 buf
 		 nil
-		 "./compile.sh"
+		 "/home/t_nishi/e-learning/prot_clang/trunk/compile.sh"
 		 "sample"
 		 (buffer-file-name)
 		 ))
