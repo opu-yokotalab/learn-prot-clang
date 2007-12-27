@@ -371,6 +371,11 @@ class TransError
     return dbgMsgElem
   end    
 
+  # 実行ログの取得(デバッガのトレース機能を利用)
+  def transDbgRunMsg(msgtmp)
+    
+  end
+  
 end
 
 
