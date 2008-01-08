@@ -12,7 +12,7 @@ require "kconv"
 # リスニングポート
 port = 7120
 
-class TransMsg
+class TransError
   
   # XML操作
   include REXML
@@ -23,7 +23,7 @@ class TransMsg
   end
   
   # コンパイルエラー
-  def transCmpMsg(msgTmp)
+  def transCmpError(msgTmp)
 
     # 処理するエラーメッセージ
     @msg = msgTmp
@@ -220,7 +220,7 @@ class TransMsg
   
   
   # 実行エラー用
-  def transDbgMsg(msgTmp)
+  def transDbgError(msgTmp)
 
     # 処理するエラーメッセージ
     @msg = msgTmp
@@ -250,11 +250,7 @@ class TransMsg
       dbgMsgElem.add_element(sysMsgElem)
       
     else
-      # メッセージの処理
-      # 実行結果、トレースデータの抽出
-      
-
-      # エラーメッセージの抽出準備
+      # ファイルを開く（例外処理付き）
       begin
           @msg.each_line {|line|
             
@@ -384,7 +380,7 @@ end
 
 
 # 解析用クラスのインスタンス
-trans = TransMsg.new("")
+trans = TransError.new("")
 
 # メッセージ蓄積用のバッファ
 msgGetBuf = String.new
@@ -426,10 +422,10 @@ while true
           puts ""
           if msgFlag == true then # コンパイラ
             puts "run transCmpError"
-            s.write trans.transCmpMsg(msgGetBuf)
+            s.write trans.transCmpError(msgGetBuf)
           elsif msgFlag == false then # デバッガ
             puts "run transDbgError"
-            s.write trans.transDbgMsg(msgGetBuf)
+            s.write trans.transDbgError(msgGetBuf)
           end
           msgGetBuf = "" # メッセージの初期化
         else

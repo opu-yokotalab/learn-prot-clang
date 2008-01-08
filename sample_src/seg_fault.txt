@@ -1,0 +1,5 @@
+Using host libthread_db library "/lib/libthread_db.so.1".
+
+Program received signal SIGSEGV, Segmentation fault.
+0x080484e6 in treewalk (p=0x0) at seg_fault.c:53
+/home/t_nishi/e-learning/prot_clang/trunk/sample_src/seg_fault.c:53:1063:beg:0x80484e6

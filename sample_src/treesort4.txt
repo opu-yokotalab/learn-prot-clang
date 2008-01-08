@@ -1,0 +1,4 @@
+Using host libthread_db library "/lib/libthread_db.so.1".
+0 1 6 7 12 18 19 20 41 50 55 65 70 81 91 
+
+Program exited normally.
