@@ -239,6 +239,7 @@ class TransMsg
     errAry = Array.new # メッセージを格納する配列
     buf = String.new # メッセージを格納する一時バッファ
     log_flag = false # バッファ取り込み用フラグ
+    result_flag = false # 実行結果、トレースデータ取り込み用フラグ
     
     # 引数の検査
     if @msg == nil then
@@ -250,33 +251,36 @@ class TransMsg
       dbgMsgElem.add_element(sysMsgElem)
       
     else
-      # メッセージの処理
-      # 実行結果、トレースデータの抽出
-      
-
       # エラーメッセージの抽出準備
       begin
           @msg.each_line {|line|
-            
-            # 空改行から最終行(^Z^Z)までバッファに取り込む
-            if log_flag == true then
-              buf = buf + line
-            end
-            
-            # 空改行
-            if line == "\n" then
-              log_flag = true
-            end
-            
-            # 最終行(^Z^Z)
-            if line.slice(0,2) == "\032\032" then
-              # 各行を改行で分割して配列に格納。
-              errAry << buf.chomp.split("\n")
-              # 関連する変数の初期化
-              buf = ""
-              log_flag = false
-            end
-          }
+
+          # メッセージの処理
+          # 実行結果、トレースデータの抽出
+          # 最初の1行目      
+          if line == "Using host libthread_db library \"/lib/libthread_db.so.1\"." then
+            result_flag = true
+          end
+          
+          # 空改行から最終行(^Z^Z)までバッファに取り込む
+          if log_flag == true then
+            buf = buf + line
+          end
+          
+          # 空改行
+          if line == "\n" then
+            log_flag = true
+          end
+          
+          # 最終行(^Z^Z)
+          if line.slice(0,2) == "\032\032" then
+            # 各行を改行で分割して配列に格納。
+            errAry << buf.chomp.split("\n")
+            # 関連する変数の初期化
+            buf = ""
+            log_flag = false
+          end
+        }
         
       rescue # 例外
         # Elemntオブジェクトの生成
