@@ -1,0 +1,220 @@
+@charset "Shift_JIS";
+
+@import url(antinn.css);
+
+body	{
+	background-color:#fdfdfd;
+	color:black;
+	margin:0;
+	padding:1em;
+}
+
+h1	{
+	color:#111111;
+	background-color:#ededed;
+	font-style:italic;
+	text-align:right;
+	border-style:solid;
+	border-color:#111111;
+	border-width:1px 2px 2px 1px;
+	margin:1em 0 1em 0;
+	padding:0.2em 1em 0.2em 1em;
+	}
+
+h2	{
+	color:gray;
+	background-color:transparent;
+	text-align:center;
+	font-weight:bold;
+	border-color:gray;
+	border-style:solid;
+	border-width:0 0 4px 0;
+	margin-left:0;
+	padding-left:0.5em;
+	}
+
+h3	{
+	color:gray;
+	background-color:transparent;
+	font-weight:bold;
+	font-style:normal;
+	border-color:gray;
+	border-style:solid;
+	border-width:1px 0 1px 0;
+	margin-left:0;
+	padding-left:1em;
+	}
+
+h4	{
+	color:#696969;
+	background-color:transparent;
+	font-weight:bold;
+	font-style:normal;
+	border-color:silver white white silver;
+	border-style:solid;
+	border-width:1px 0.5px 0.5px 1px;
+	margin-left:0;
+	padding:0.2em 0.2em 0.2em 0.5em;
+	}
+
+h5	{
+	color:#2f4f4f;
+	background-color:transparent;
+	font-weight:bold;
+	font-style:italic;
+	border-color:#2f4f4f;
+	border-style:dotted;
+	border-width:1px 0 0 0;
+	margin:0;
+	padding:0.2em 0.2em 0.2em 1em;
+	}
+
+h6	{
+	color:gray;
+	background-color:transparent;
+	font-weight:bold;
+	margin-left:0;
+	padding-left:1em;
+	}
+
+p	{
+	margin:0.5em 1em 0 1em;
+/*	text-indent:1em;
+*/	text-align:justify;
+	}
+
+address	{
+	background-color:#ececec;
+	color:gray;
+	font-style:normal;
+	text-align:right;
+	border-style:solid;
+	border-color:gray;
+	border-width:1px 0 1px 0;
+	margin:1em 0;
+	padding:0.4em;
+	}
+
+ul,ol	{
+	margin-left:0;
+	padding:0;
+	}
+li	{
+	margin:0.3em 0 0 2em;
+	padding:0;
+	}
+
+dl	{
+	margin:0 1em;
+	}
+
+hr	{
+	border:0.2em;
+	margin:1em 0 0 0;
+	}
+
+a	{
+	color:black;
+	background-color:transparent;
+	}
+
+
+a:link	{
+	color:black;
+	background-color:transparent;
+	}
+a:visited	{
+	color:#808080;
+	background-color:transparent;
+	}
+a:hover	{
+	color:red;
+	background-color:transparent;
+	}
+a:focus	{
+	color:red;
+	background-color:transparent;
+	}
+a:active	{
+	color:red;
+	background-color:transparent;
+	}
+
+em	{
+	font-style:normal;
+	font-weight:normal;
+	color:red;
+	background-color:transparent;
+	text-decoration:none;
+	}
+
+strong	{
+	font-style:normal;
+	font-weight:bold;
+	color:red;
+	background-color:transparent;
+	text-decoration:underline;
+	}
+
+small	{
+	font-size:0.75em;
+	}
+
+big	{
+	font-size:2em;
+	}
+
+
+cite	{
+	color:black;
+	background-color:#eeeeee;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	quotes:"(" ")";
+	}
+
+cite:before	{
+	content:open-quote;
+	}
+
+cite:after	{
+	content:close-quote;
+	}
+
+/*
+table	{
+	line-height: 150%;
+	margin: 1em 0 1em 0;
+	border: 0.1em solid;
+	}
+
+th, td {
+	line-height:1em;
+	border-width: 0.1em 0.1em 0.1em 0.1em;
+	border-style: solid;
+	}
+
+*/
+
+samp	{
+	color:navy;
+	background-color:white;
+	}
+
+code	{
+	color:green;
+	background-color:white;
+	}
+
+q:lang(jp)	{
+	quotes:"Åu" "Åv";
+	}
+
+q:before	{
+	content:open-quote;
+	}
+
+q:after	{
+	content:close-quote;
+	}
