@@ -31,7 +31,7 @@ while true
 
         Net::HTTP.version_1_2   # おまじない
         Net::HTTP.start("localhost", 80) {|http|
-          response = http.post("/~t_nishi/cgi-bin/prot_clang/test_cgi.cgi", 
+          response = http.post("/~t_nishi/cgi-bin/prot_clang/history_db.cgi", 
                                "mode=import&msg=" + CGI.escape(msgGetBuf),
                                {"Content-Type" => "application/x-www-form-urlencoded"}
                                )
