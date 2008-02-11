@@ -1,4 +1,4 @@
-@charset "Shift_JIS";
+@charset "EUC-JP";
 
 @import url(antinn.css);
 
@@ -208,7 +208,7 @@ code	{
 	}
 
 q:lang(jp)	{
-	quotes:"Åu" "Åv";
+	quotes:"°÷" "°◊";
 	}
 
 q:before	{
