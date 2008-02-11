@@ -1,4 +1,4 @@
-@charset "EUC-JP";
+@charset "UTF-8";
 
 @import url(antinn.css);
 
@@ -208,7 +208,7 @@ code	{
 	}
 
 q:lang(jp)	{
-	quotes:"¡Ö" "¡×";
+	quotes:"ï½¡ï¾–" "ï½¡ï¾—";
 	}
 
 q:before	{
