@@ -1,4 +1,4 @@
- (defun compile-files ()
+ (defun adel-compile ()
    "run make"
    (interactive)
    (let ((buf (get-buffer-create "*result*"))
@@ -17,6 +17,7 @@
 ;     (display-buffer "*result*"))
    (analysis-client)
    (http-client))
+   (message "Done.")
 )
 
 (defun http-client ()
