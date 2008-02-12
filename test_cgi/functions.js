@@ -1,6 +1,6 @@
 var blnRequestEnabled = true; // error flag
 // Base URL
-var baseURL = "/~t_nishi/cgi-bin/prot_clang/test_cgi.cgi"; 
+var baseURL = "/~t_nishi/cgi-bin/prot_clang/result.cgi"; 
 
 function fnc_alert(msg){
     window.alert(msg);
@@ -26,7 +26,7 @@ function call_cgi(obj) {
 	    if(obj.name == "reload") {
 		    pageURL = baseURL +	"?mode=html";
             } else {
-                    pageURL = baseURL + "?mode=new";
+//                    pageURL = baseURL + "?mode=new";
             }
 
 	    xmlhttp.open('GET', pageURL);

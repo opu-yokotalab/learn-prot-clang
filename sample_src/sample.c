@@ -17,7 +17,7 @@ int main()
   for(i=0;i<SIZE;i++){
     printf("put a[%d]: ",i);
     scanf("%d", &a[i]);
-  }|x!|
+  }
 
   for(i=0;i<SIZE;i++){
     printf("a[%d] = %d\n", i, a[i]);
@@ -25,4 +25,4 @@ int main()
 
   return 0;
 }
-
+}

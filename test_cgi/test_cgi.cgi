@@ -19,7 +19,7 @@ class Test_cgi
 
   # 受け取ったxmlの保存
   def save_xml()
-    File.open(File.expand_path("./result.xml"),"w") {|fp|
+    File.open(File.expand_path("./result.txt"),"w") {|fp|
       fp.write(@doc)
     }
   end
@@ -27,7 +27,7 @@ class Test_cgi
   # 保存したxmlの読み込み
   def load_xml()
     tmpStr = String.new
-    File.open(File.expand_path("./result.xml"),"r") {|fp|
+    File.open(File.expand_path("./result.txt"),"r") {|fp|
       tmpStr = tmpStr + fp.gets
     }
     return tmpStr
@@ -35,7 +35,7 @@ class Test_cgi
 
   # 初期化
   def reset()
-    File.open(File.expand_path("./result.xml"),"w") {|fp|
+    File.open(File.expand_path("./result.txt"),"w") {|fp|
       fp.write("<compiler_messages><message status=\"-\" line=\"-\"><description>-</description><function>-</function><source>-</source></message></compiler_messages>")
     }
   end
